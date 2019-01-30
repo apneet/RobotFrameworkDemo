@@ -1,0 +1,5 @@
+1. Install Python
+2. Install Robot Frameowork Selenium Lib latest version
+3. Install RED IDE for RF
+4. Install Jenkins and Configure
+5. Create GIT Repo
