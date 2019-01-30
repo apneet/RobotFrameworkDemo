@@ -13,6 +13,7 @@ ${MESSAGE}       Hello, world!
 
 *** Test Cases ***
 Login IB with SmartID
+    [Tags]  LoginTest
    Login with SmartID
     
     
