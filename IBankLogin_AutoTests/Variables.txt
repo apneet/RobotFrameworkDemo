@@ -1,0 +1,5 @@
+*** Variables ***
+ ${url}    https://www.swedbank.ee/private
+ ${timeout}   60s
+ ${userName}    1549486 
+ ${iDCode}      48809170012

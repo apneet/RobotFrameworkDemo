@@ -1,0 +1,23 @@
+*** Settings ***
+Documentation    Login Page Tests
+Library          OperatingSystem
+Library          SeleniumLibrary    
+###############################
+Resource    Keywords.txt
+Resource    Variables.txt
+
+*** Keywords ***
+Login with SmartID
+    Open Browser    ${url}   chrome
+    Maximize Browser Window
+    Wait Until Page Contains Element    css=a[class="ico -f -tick -caption"]    ${timeout}
+    Click Element    css=a[class="ico -f -tick -caption"]   
+    Wait Until Page Contains Element    css=li[id="loginTab_SMART_ID"]   ${timeout}  
+    Click Element    css=li[id="loginTab_SMART_ID"]    
+    Input Text       id=userId     ${userName}   # css=input[class="loginInput"] 
+    ${status}=   Run Keyword And Return Status    Page Should Contain Element     id=authPwd           
+    Run Keyword If    ${status}==True     Input Text       id=authPwd    ${iDCode} 
+    Wait Until Page Contains Element     id=pwdLoginButton     ${timeout}  
+    Click Element   id=pwdLoginButton    
+    sleep   10s
+    
